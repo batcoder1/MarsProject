@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CommandsType",
+  "type": "object",
+  "properties": {
+    "commands": {
+      "type": "string"
+    },
+    "robotId": {
+      "type": "number"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["commands"]
+}

@@ -43,18 +43,15 @@ export class Robot {
   }
 
   public moveForward(): void {
-    console.log("moveForward...");
     const params: CreateScentParams = {
       point: this.position.getPoint(),
       orientation: this.orientation,
     };
-    console.log(params);
     const _scent: Scent = createScent(params);
 
     //if it's not in Scent store, move the robot
     if (!this.isScentInStore(_scent)) {
       //move
-      console.log("move------------");
       switch (this.orientation) {
         case "N":
           this.position.toNorth();
@@ -73,21 +70,13 @@ export class Robot {
       if (this.isRobotLost() && !this.isScentInStore(_scent)) {
         this.scent = _scent;
         this.grid.addScent(_scent);
-        console.log(this.grid.getScents());
       }
     }
   }
 
   public isScentInStore(scent: Scent) {
-    console.log(this.grid.getScents());
     let scentExists = false;
     this.grid.getScents().forEach((scentStore) => {
-      console.log("------------------");
-      console.log(scentStore.getPoint());
-      console.log(scent.getPoint());
-      console.log("------------------");
-      console.log(scentStore.getOrientation());
-      console.log(scent.getOrientation());
       if (
         scentStore.getPoint().x == scent.getPoint().x &&
         scentStore.getPoint().y == scent.getPoint().y &&
@@ -96,7 +85,6 @@ export class Robot {
         scentExists = true;
       }
     });
-    console.log("scentExists", scentExists);
     return scentExists;
   }
 
@@ -135,9 +123,6 @@ export class Robot {
   }
 
   public isRobotLost() {
-    console.log("isRobotLost?: ", this.isLost);
-    console.log("this.grid.getLimits()?: ", this.grid.getLimits());
-    console.log("this.position.getPoint()?: ", this.position.getPoint());
     if (
       this.position.getPoint().x > this.grid.getLimits().x ||
       this.position.getPoint().y > this.grid.getLimits().y ||
@@ -146,7 +131,6 @@ export class Robot {
     ) {
       this.isLost = true;
     }
-    console.log("Lost?: ", this.isLost);
     return this.isLost;
   }
 

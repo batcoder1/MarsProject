@@ -136,8 +136,6 @@ describe("Test robot ", () => {
     expect(isLost).equals(valueExpected);
   });
   it("method isRobotLost should return false because scent already exists", async () => {
-    console.log("method isRobotLost***");
-
     const valueExpected = false;
     const paramRobot: CreateRobotParams = {
       id: 5,

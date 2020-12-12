@@ -36,7 +36,6 @@ export class Grid {
   }
 
   public addScent(scent: Scent): void {
-    console.log("addScent", scent);
     this.scents.push(scent);
   }
 

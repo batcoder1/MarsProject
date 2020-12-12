@@ -1,0 +1,9 @@
+{
+  "environment": "NODE_ENV",
+  "logger": {
+    "logs": {
+      "type": "LOGGER_TYPE",
+      "level": "LOGGER_LEVEL"
+    } 
+  }
+}

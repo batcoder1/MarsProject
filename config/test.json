@@ -1,0 +1,8 @@
+{
+  "logger": {
+    "logs": {
+      "type": "console",
+      "level": "info"
+    } 
+ }
+}

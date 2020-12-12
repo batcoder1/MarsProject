@@ -1,0 +1,13 @@
+node_modules/*
+npm-debug.log
+.tscache
+*.cache
+dist
+typings
+.idea
+.DS_Store
+coverage
+logs/
+./nyc_output/*
+.scannerwork/*
+package-lock.json

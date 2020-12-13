@@ -44,6 +44,7 @@ export default class RobotController {
 
       res.send({ robotId: id });
     } catch (error) {
+      logger.error(error);
       res.status(error.code).send({ error });
     }
   }
@@ -58,7 +59,9 @@ export default class RobotController {
       logger.info("getRobots...:");
 
       const grid = Grid.getInstance();
-
+      if (!grid) {
+        createErrorHandler(400, "Grid not exists, please create one").throwIt();
+      }
       const robots = grid.getRobots().map((robot) => {
         return {
           id: robot.getId(),
@@ -68,6 +71,8 @@ export default class RobotController {
       });
       res.send(robots);
     } catch (error) {
+      logger.error(error.message);
+
       res.status(error.code).send({ error });
     }
   }

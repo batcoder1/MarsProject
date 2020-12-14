@@ -34,7 +34,7 @@ export class Routes {
    */
   private index(req: express.Request, res: express.Response) {
     res.json({
-      message: "Welcome Mars Proyect API",
+      message: "Welcome Mars Project API",
     });
   }
 }

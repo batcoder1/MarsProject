@@ -47,3 +47,149 @@ LLFFFLFLFL
 3 3 N LOST
 2 3 S
 ```
+
+# API
+
+The API Rest documentation
+
+## ROBOTS
+
+## Get Robots
+
+### Request
+
+`GET /robots/`
+
+```
+curl --request GET 'https://marsproject2020.herokuapp.com/robot' \
+ --header 'Content-Type: application/json'
+```
+
+### Response
+
+HTTP/1.1 200 OK
+
+```
+[]
+```
+
+or
+
+### Response
+
+HTTP/1.1 200 OK
+
+```
+[{
+  "id": 0,
+  "position": {
+    "x": 1,
+    "y": 2,
+  },
+  "orientation": N,
+};]
+```
+
+or
+
+### Response
+
+HTTP/1.1 404 Not Found
+
+```
+{
+  "error": {
+    "code": 404,
+    "description": "Not found"
+  }
+}
+```
+
+## Create a Robot
+
+### Request
+
+`PUT /robots`
+
+```
+curl --request PUT 'https://marsproject2020.herokuapp.com/robot' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+  "x": 2,
+  "y": 4,
+  "orientation": "N"
+}'
+```
+
+### Response
+
+HTTP/1.1 200 OK
+
+```
+{
+"robotId":1
+}
+```
+
+or
+
+### Response
+
+HTTP/1.1 400 OK
+
+```
+{
+  "error": {
+    "code": 400,
+    "description": "Grid not exists, please create one"
+  }
+}
+```
+
+## GRID
+
+## Create a Grid
+
+### Request
+
+`PUT /grid`
+
+```
+curl --request PUT 'https://marsproject2020.herokuapp.com/grid' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+  "x": 2,
+  "y": 4
+  }'
+```
+
+### Response
+
+HTTP/1.1 200 OK
+
+## COMMANDS
+
+## Send instructions to Robots
+
+### Request
+
+`POST /commands`
+
+```
+curl --request POST 'https://marsproject2020.herokuapp.com/commands' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+  "robotId": 0,
+  "commands": "LFRFF"
+  }'
+```
+
+### Response
+
+HTTP/1.1 200 OK
+
+```
+{
+  2 4 N
+}
+```

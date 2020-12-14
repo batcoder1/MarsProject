@@ -7,30 +7,11 @@ import {
   Orientation,
   Path,
 } from "../../../config/constant";
-import { Grid } from "../../handlers/grid";
-import { createRobot, CreateRobotParams, Robot } from "../../handlers/robot";
+import { Grid } from "../../entities/grid";
+import { createRobot, CreateRobotParams, Robot } from "../../entities/robot";
 import { createPosition } from "../../helper/position";
 import * as server from "../../server";
 
-/*
-Sample input
-5 3
-
-1 1 E
-RFRFRFRF
-
-3 2 N
-FRRFLLFFRRFLL
-
-0 3 W
-LLFFFLFLFL
-
-Sample output
-1 1 E
-3 3 N LOST
-2 3 S
-
-*/
 const baseUrl = BASE_URL;
 describe("Test command controller", () => {
   before(async () => {

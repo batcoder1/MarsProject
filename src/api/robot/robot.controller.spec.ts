@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse, Method } from "axios";
 import { expect } from "chai";
-import { Grid } from "../../handlers/grid";
+import { Grid } from "../../entities/grid";
 import { createPosition } from "../../helper/position";
 import {
   BASE_URL,

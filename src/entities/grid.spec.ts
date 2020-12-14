@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { BASE_URL, Orientation } from "../../config/constant";
-import { Grid } from "../handlers/grid";
+import { Grid } from "./grid";
 import { createPosition, Position } from "../helper/position";
 import * as server from "../server";
 import { createRobot, CreateRobotParams, Robot } from "./robot";
@@ -10,14 +10,10 @@ const baseUrl = BASE_URL;
 let grid: Grid;
 describe("Test grid ", () => {
   before(async () => {
-    await server.start();
     const position = createPosition(5, 4);
     grid = Grid.getInstance(position);
     grid.setLimits(5, 4);
     grid.reseteMemory();
-  });
-  after(async () => {
-    server.stopServer();
   });
 
   it("method addRobot should add robot to array of robots ", async () => {

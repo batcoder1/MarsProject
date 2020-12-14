@@ -6,7 +6,7 @@ import {
   HTTP_CODE_OK,
   Path,
 } from "../../../config/constant";
-import { Grid } from "../../handlers/grid";
+import { Grid } from "../../entities/grid";
 import { createPosition } from "../../helper/position";
 import * as server from "../../server";
 

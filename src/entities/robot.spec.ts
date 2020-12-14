@@ -9,14 +9,10 @@ const baseUrl = BASE_URL;
 let grid: Grid;
 describe("Test robot ", () => {
   before(async () => {
-    await server.start();
     const position = createPosition(5, 4);
     grid = Grid.getInstance(position);
     grid.setLimits(5, 4);
     grid.reseteMemory();
-  });
-  after(async () => {
-    server.stopServer();
   });
 
   it("function createRobot should create robot with same params", async () => {

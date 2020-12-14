@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { COMMANDS } from "../../../config/constant";
-import { Grid } from "../../handlers/grid";
+import { Grid } from "../../entities/grid";
 import { createErrorHandler } from "../../share/error-handler/error.handler";
 import { logger } from "../../share/util/logger";
 import {

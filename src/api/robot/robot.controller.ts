@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { ROBOT } from "../../../config/constant";
-import { Grid } from "../../handlers/grid";
-import { createRobot, CreateRobotParams, Robot } from "../../handlers/robot";
+import { Grid } from "../../entities/grid";
+import { createRobot, CreateRobotParams, Robot } from "../../entities/robot";
 import { createPosition } from "../../helper/position";
 import { createErrorHandler } from "../../share/error-handler/error.handler";
 import { logger } from "../../share/util/logger";

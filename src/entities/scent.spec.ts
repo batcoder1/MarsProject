@@ -8,16 +8,12 @@ const baseUrl = BASE_URL;
 let scent: Scent;
 describe("Test scent ", () => {
   before(async () => {
-    await server.start();
     const point: Point = { x: 3, y: 5 };
     const params: CreateScentParams = {
       point,
       orientation: Orientation.NORTH,
     };
     scent = createScent(params);
-  });
-  after(async () => {
-    server.stopServer();
   });
 
   it("method equalsPositionAndOrientation should return true ", async () => {
